@@ -1,4 +1,4 @@
-require 'pry'
+# require 'pry'
 
 class Replicator
 
@@ -18,7 +18,7 @@ class Replicator
 
   def replicate(recipe)
     @recipe = recipe
-    binding.pry
+    # binding.pry
     retrieve_glass
     transport_ingredients_to_glass
     mix
