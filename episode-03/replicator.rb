@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   attr_reader :plate
@@ -50,6 +52,8 @@ class Replicator
   def adjust_temperature
     return unless glass_in_tummy
 
+
+
     glass_in_reactor_core = @enterprise.transporter.energize(obj: glass_in_tummy, from: @tummy, to: @enterprise.reactor.core)
 
     desired_temperature = @recipe.temperature
@@ -70,6 +74,8 @@ class Replicator
     end
 
     @enterprise.transporter.energize(obj: glass_in_reactor_core, from: @enterprise.reactor.core, to: @tummy)
+
+    # binding.pry
 
   end
 

@@ -1,3 +1,5 @@
+require 'pry'
+
 class Replicator
 
   attr_reader :plate
@@ -15,6 +17,7 @@ class Replicator
   end
 
   def replicate(recipe)
+    # binding.pry
     @recipe = recipe
     retrieve_glass
     transport_ingredients_to_glass
@@ -53,7 +56,7 @@ class Replicator
     glass_in_reactor_core = @enterprise.transporter.energize(obj: glass_in_tummy, from: @tummy, to: @enterprise.reactor.core)
 
     desired_temperature = @recipe.temperature
-    maximum_adjustments_allowed = 50
+    maximum_adjustments_allowed = 60
     number_of_adjustments = 0
 
     while glass_in_reactor_core.temperature != desired_temperature &&
